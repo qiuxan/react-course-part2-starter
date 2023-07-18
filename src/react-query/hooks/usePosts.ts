@@ -7,12 +7,13 @@ interface Post {
   body: string;
   userId: number;
 }
-const usePosts = () => {
+const usePosts = (userId:number| undefined) => {
     const fetchPosts = () => axios
-        .get < Post[] > ('https://jsonplaceholder.typicode.com/posts')
+        .get < Post[] > ('https://jsonplaceholder.typicode.com/posts',{params:{ userId}})
         .then(res => res.data);
     return useQuery<Post[], Error>({
-        queryKey:['post'],
+        // /users/1/posts
+        queryKey:userId?['users',userId,'posts']:['posts'],
         queryFn: fetchPosts,
         staleTime: 10*1000,
 
