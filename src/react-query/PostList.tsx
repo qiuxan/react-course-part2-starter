@@ -1,5 +1,5 @@
 import { useState } from "react";
-import useTodos from "./hooks/useTodo";
+import useTodos from "./hooks/useTodos";
 import usePosts from "./hooks/usePosts";
 import React from "react";
 
