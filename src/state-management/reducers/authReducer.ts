@@ -1,10 +1,16 @@
 interface LoginAction {
-  type: "LOGIN" | "LOGOUT";
+  type: "LOGIN";
+  userName: string;
 }
-const authReducer = (state: string, action: LoginAction): string => {
+interface LogoutAction {
+  type: "LOGOUT";
+}
+
+type Actions = LoginAction | LogoutAction;
+const authReducer = (userName: string, action: Actions): string => {
   switch (action.type) {
     case "LOGIN":
-      return "mosh.hamedani";
+      return action.userName;
     case "LOGOUT":
       return "";
   }

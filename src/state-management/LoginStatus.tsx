@@ -19,7 +19,10 @@ const LoginStatus = () => {
     );
   return (
     <div>
-      <a onClick={() => dispatch({ type: "LOGIN" })} href="#">
+      <a
+        onClick={() => dispatch({ type: "LOGIN", userName: "moshi.m" })}
+        href="#"
+      >
         Login
       </a>
     </div>
