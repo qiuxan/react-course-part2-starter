@@ -3,7 +3,7 @@ import HomePage from "./routing/HomePage";
 import AuthProvider from "./state-management/AuthProvider";
 import LoginStatus from "./state-management/LoginStatus";
 import NavBar from "./state-management/NavBar";
-import TasksProvider from "./state-management/TasksProvider";
+import { TasksProvider } from "./state-management/tasks";
 
 function App() {
   return (
