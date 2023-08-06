@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import TaskList from "../state-management/TaskList";
+import { TaskList } from "../state-management/tasks";
 import AuthContext from "../state-management/contexts/authContext";
 
 const HomePage = () => {
