@@ -1,30 +1,24 @@
 import { useReducer } from "react";
 import "./App.css";
-import TodoForm from "./react-query/TodoForm";
-import TodoList from "./react-query/TodoList";
-import Counter from "./state-management/Counter";
-import LoginStatus from "./state-management/LoginStatus";
-import TaskList from "./state-management/TaskList";
-import tasksReducer from "./state-management/reducers/tasksReducer";
-import NavBar from "./state-management/NavBar";
 import HomePage from "./routing/HomePage";
+import AuthProvider from "./state-management/AuthProvider";
+import LoginStatus from "./state-management/LoginStatus";
+import NavBar from "./state-management/NavBar";
 import TasksContext from "./state-management/contexts/taskContexts";
-import authReducer from "./state-management/reducers/authReducer";
-import AuthContext from "./state-management/contexts/authContext";
+import tasksReducer from "./state-management/reducers/tasksReducer";
 
 function App() {
   const [tasks, tasksDispatch] = useReducer(tasksReducer, []);
-  const [user, authDispatch] = useReducer(authReducer, "");
 
   return (
-    <AuthContext.Provider value={{ user, dispatch: authDispatch }}>
+    <AuthProvider>
       <TasksContext.Provider value={{ tasks, dispatch: tasksDispatch }}>
         <NavBar />
         <HomePage />
 
         <LoginStatus />
       </TasksContext.Provider>
-    </AuthContext.Provider>
+    </AuthProvider>
   );
 }
 
