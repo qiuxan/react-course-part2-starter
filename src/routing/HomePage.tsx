@@ -1,5 +1,6 @@
 import { TaskList } from "../state-management/tasks";
 import authStore from "../state-management/auth/store";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
   const { user } = authStore();
@@ -12,7 +13,7 @@ const HomePage = () => {
         mollitia!
       </p>
 
-      <a href="/users">Users</a>
+      <Link to="/users">Users</Link>
     </>
   );
 };
