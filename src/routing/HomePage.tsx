@@ -13,7 +13,6 @@ const HomePage = () => {
       </p>
 
       <a href="/users">Users</a>
-      <TaskList />
     </>
   );
 };
