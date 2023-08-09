@@ -1,6 +1,7 @@
 import { TaskList } from "../state-management/tasks";
 import authStore from "../state-management/auth/store";
 import { Link } from "react-router-dom";
+import { error } from "console";
 
 const HomePage = () => {
   const { user } = authStore();
